@@ -97,7 +97,7 @@ function removeFromArray(arr, elt) {
       }
   
       // Remove the current array position
-      removeFromArray(openSet, c
+      removeFromArray(openSet, current);
       //add this to closed set
       closedSet.push(current);
   
@@ -126,9 +126,9 @@ function removeFromArray(arr, elt) {
           // Yes, it's a better path
           if (newPath) {
             neighbor.h = heuristic(neighbor, end);
-            neighbor.f = neighbor.g + neighbor.h;
+            //neighbor.f = neighbor.g + neighbor.h;
             //greedy
-            //neighbor.f = neighbor.h;
+            neighbor.f = neighbor.h;
             //custo uniforme
             //neighbor.f = neighbor.g;
             
